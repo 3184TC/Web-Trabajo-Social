@@ -1,0 +1,8 @@
+{
+  "/contact/page": "app/contact/page.js",
+  "/about/page": "app/about/page.js",
+  "/page": "app/page.js",
+  "/tour-details/page": "app/tour-details/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+}
