@@ -334,6 +334,7 @@ const page = () => {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          sansandbox="allow-same-origin"
         />
       </div>
       {/* Contact Map End */}
