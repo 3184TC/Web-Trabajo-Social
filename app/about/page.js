@@ -17,7 +17,7 @@ const page = () => {
   useEffect(() => {
     const fetchInstitucion = async () => {
       try {
-        const response = await fetch("https://serviciopagina.upea.bo/api/InstitucionUPEA/18");
+        const response = await fetch("https://serviciopagina.upea.bo/api/InstitucionUPEA/36");
         const data = await response.json();
         setInstitucion(data.Descripcion);
       } catch (error) {

@@ -7,19 +7,19 @@ import ReveloLayout from "@/layout/ReveloLayout";
 import Link from "next/link";
 const page = () => {
   const [convocatorias, setConvocatorias] = useState([])
-    useEffect(() => {
-      const fetchConvocatorias = async () => {
-        try {
-          const response = await fetch("https://serviciopagina.upea.bo/api/convocatoriasAll/36");
-          const data = await response.json();
-          setConvocatorias(data);
-        } catch (error) {
-          console.error("Error :", error);
-        }
-      };
-  
-      fetchConvocatorias();
-    }, []);
+  useEffect(() => {
+    const fetchConvocatorias = async () => {
+      try {
+        const response = await fetch("https://serviciopagina.upea.bo/api/convocatoriasAll/36");
+        const data = await response.json();
+        setConvocatorias(data);
+      } catch (error) {
+        console.error("Error :", error);
+      }
+    };
+
+    fetchConvocatorias();
+  }, []);
   return (
     <ReveloLayout>
       <Banner pageTitle={"Convocatorias"} search={true} />
@@ -38,31 +38,31 @@ const page = () => {
             </div>
           </div>
           <div className="row gap-10 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 justify-content-center">
-          {convocatorias.map((convocatorias, index) => (
-            <div key={index} className="col">
-              <div
-                className="destination-item style-two"
-                data-aos="fade-up"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <div className="image">
-                  <img
-                  src={`https://serviciopagina.upea.bo/Convocatorias/${convocatorias.con_foto_portada}`} alt="img" width={500} height={300} layout="responsive" unoptimized />
-                </div>
-                <div className="content">
-                  <h6>
-                    <Link href="destination-details">
-                    <p dangerouslySetInnerHTML={{__html:convocatorias.con_titulo}}/></Link>
-                  </h6>
-                  <span className="tours">
-                  {/* INICIO: <p dangerouslySetInnerHTML={{__html:convocatorias.con_fecha_inicio}}/> */}
-                   {/*  <p dangerouslySetInnerHTML={{__html:convocatorias.con_descripcion}}/> */}
-                  </span>
+            {convocatorias.map((convocatorias, index) => (
+              <div key={index} className="col">
+                <div
+                  className="destination-item style-two"
+                  data-aos="fade-up"
+                  data-aos-duration={1500}
+                  data-aos-offset={50}
+                >
+                  <div className="image">
+                    <img
+                      src={`https://serviciopagina.upea.bo/Convocatorias/${convocatorias.con_foto_portada}`} alt="img" width={500} height={300} layout="responsive" unoptimized />
+                  </div>
+                  <div className="content">
+                    <h6>
+                      <Link href="destination-details">
+                        <p dangerouslySetInnerHTML={{ __html: convocatorias.con_titulo }} /></Link>
+                    </h6>
+                    <span className="tours">
+                      {/* INICIO: <p dangerouslySetInnerHTML={{__html:convocatorias.con_fecha_inicio}}/> */}
+                      {/*  <p dangerouslySetInnerHTML={{__html:convocatorias.con_descripcion}}/> */}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </section>
